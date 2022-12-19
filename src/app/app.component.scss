@@ -13,42 +13,21 @@ mat-drawer-container {
 			flex-direction: column;
 			box-sizing: border-box;
 			display: flex;
-            // place-content: center;
-                align-items: center;
+			align-items: center;
 		}
 
 		mat-card {
 			border-radius: 1rem !important;
 			margin: 0.5rem;
-            display: flex;
-
-			&.list {
-                flex: 1 1 100%;
-                box-sizing: border-box;
-                max-width: 85%;
-                height: 100%;
-                width: 100%;
-
-			}
 
 			mat-form-field {
 				width: 100%;
 				margin: 0.5rem 0 !important;
 			}
 
-			// img{
-			//     height: 100px;
-			//     width: auto;
-			// }
-
 			.mat-card-actions {
 				margin: 0;
 			}
 		}
 	}
-}
-
-.example-header-image {
-	background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-	background-size: cover;
 }
