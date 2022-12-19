@@ -4,9 +4,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CustomMaterialModule } from "./modules/custom-material.module";
 
+
 @NgModule({
 	declarations: [AppComponent],
-	imports: [BrowserModule, AppRoutingModule, CustomMaterialModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		CustomMaterialModule,
+
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })

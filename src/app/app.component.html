@@ -1,7 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
-	<mat-sidenav
+<mat-drawer-container class="example-container">
+	<mat-drawer
 		#drawer
-		class="sidenav"
 		fixedInViewport
 		[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
 		[mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -13,9 +12,9 @@
 			<a mat-list-item href="#">Link 2</a>
 			<a mat-list-item href="#">Link 3</a>
 		</mat-nav-list>
-	</mat-sidenav>
-	<mat-sidenav-content>
-		<mat-toolbar color="primary">
+	</mat-drawer>
+	<mat-drawer-content>
+		<mat-toolbar color="primary" class="mat-elevation-z11">
 			<button
 				type="button"
 				aria-label="Toggle sidenav"
@@ -27,6 +26,25 @@
 			</button>
 			<span>ng15fireblog</span>
 		</mat-toolbar>
-		<!-- Add Content Here -->
-	</mat-sidenav-content>
-</mat-sidenav-container>
+		<div class="content">
+			<mat-card class="list" *ngFor="let user of list; index as i">
+				<mat-card-header>
+					<img mat-card-avatar [src]="user.image" />
+					<mat-card-title
+						>#{{ i + 1 }} - {{ user.name }}</mat-card-title
+					>
+					<mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+				</mat-card-header>
+				<img
+					mat-card-image
+					[src]="user.image"
+				/>
+				<mat-card-content>
+					<p>
+						{{ user.bio }}
+					</p>
+				</mat-card-content>
+			</mat-card>
+		</div>
+	</mat-drawer-content>
+</mat-drawer-container>
