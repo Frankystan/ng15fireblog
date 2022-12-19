@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng14fireblog": {
+      "hosting": {
+        "ng15fireblog": [
+          "ng15fireblog"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng14fireblog"
+  }
+}

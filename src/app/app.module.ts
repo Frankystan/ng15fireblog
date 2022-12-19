@@ -6,13 +6,13 @@ import { CustomMaterialModule } from "./modules/custom-material.module";
 import { ListComponent } from './pages/list/list.component';
 
 
+
 @NgModule({
 	declarations: [AppComponent, ListComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		CustomMaterialModule,
-
 	],
 	providers: [],
 	bootstrap: [AppComponent],
