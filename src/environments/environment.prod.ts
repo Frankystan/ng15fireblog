@@ -1,13 +1,13 @@
 export const environment = {
 	production: true,
     firebase: {
-		projectId: "ng14fireblog",
-		appId: "1:666659177961:web:a74c49f45da39cf5883778",
-		storageBucket: "ng14fireblog.appspot.com",
-		locationId: "europe-west",
-		apiKey: "AIzaSyC9P9HaXL13KEvjpObGD6hXMofhVi1wrQ4",
-		authDomain: "ng14fireblog.firebaseapp.com",
-		messagingSenderId: "666659177961",
-		measurementId: "G-SHNEHV76F6",
+		projectId: "ng15fireblog-fd04a",
+		appId: "1:942933187233:web:27cb892cf9ab331eb4aee0",
+		storageBucket: "ng15fireblog-fd04a.appspot.com",
+		locationId: "europe-west2",
+		apiKey: "AIzaSyBaK9KEkAhVvEVhIeTWmTsKC_PpQ2Ii4Yw",
+		authDomain: "ng15fireblog-fd04a.firebaseapp.com",
+		messagingSenderId: "942933187233",
+		measurementId: "G-92WGT8FS6V",
 	},
 };

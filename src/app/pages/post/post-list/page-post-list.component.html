@@ -1,0 +1,6 @@
+<ul>
+	<li *ngFor="let post of data$ | async; let i = index">
+		<app-post-list-element [post]="post"></app-post-list-element>
+	</li>
+</ul>
+<fab-create-post></fab-create-post>

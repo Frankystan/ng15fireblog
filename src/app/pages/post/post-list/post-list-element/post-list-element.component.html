@@ -1,0 +1,21 @@
+<a [routerLink]="['/posts', post.id]"
+	class="post-anchor-element"
+	fxFlex="100"
+	fxFlex.sm="85"
+	fxFlex.gt-sm="75">
+
+	<mat-card class="list">
+		<mat-card-header>
+			<img mat-card-avatar
+				src="https://www.zelda.com/links-awakening/assets/img/characters/char-link.png"/>
+
+			<mat-card-title class="truncated"
+				>#{{ post.id }} - {{ post.title }}
+            </mat-card-title>
+
+			<mat-card-subtitle>
+                {{ post.created_at! * 1000 | amDateFormat : "DD-MM-YYYY HH:mm"}} | Ursula Seijas
+			</mat-card-subtitle>
+		</mat-card-header>
+	</mat-card>
+</a>

@@ -14,20 +14,7 @@ mat-drawer-container {
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
-		}
-
-		mat-card {
-			border-radius: 1rem !important;
-			margin: 0.5rem;
-
-			mat-form-field {
-				width: 100%;
-				margin: 0.5rem 0 !important;
-			}
-
-			.mat-card-actions {
-				margin: 0;
-			}
+            margin: 0.5rem;
 		}
 	}
 }

@@ -1,0 +1,41 @@
+<ng-container *ngIf="post$ | async as post">
+
+    <mat-card fxFlex="100" fxFlex.sm="85" fxFlex.gt-sm="65">
+        <mat-card-header fxLayout="row" fxLayoutAlign="start start">
+
+            <div mat-card-avatar class="header-image"></div>
+
+            <mat-card-title> {{ post.title }} </mat-card-title>
+
+            <mat-card-subtitle>
+                <time>
+                    {{ (post.created_at! *1000)| amDateFormat: 'DD-MM-YYYY HH:mm' }}
+                    ( {{ (post.created_at! *1000) | amLocale: locale | amTimeAgo }} )
+                </time>
+            </mat-card-subtitle>
+
+            <span fxFlex></span>
+
+            <!-- <ng-container *ngIf="isBookMarked$|async; then: bookMarked; else: notBookMarked"></ng-container> -->
+
+
+        </mat-card-header>
+
+        <!-- only displays when this is in viewport -->
+        <!-- <img lazySrcVisible="visible" mat-card-image [lazySrc]="post.featured_image && post.featured_image !=''   ? post.featured_image : './../../../assets/img/blog.jpg'" /> -->
+        <img mat-card-image [src]="post.featured_image" />
+
+        <mat-card-content>
+            <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(post.content!)"> </span>
+        </mat-card-content>
+
+        <mat-divider class="inset"></mat-divider>
+
+        <mat-card-actions align="start">
+            <mat-chip-listbox aria-label="Tag selection">
+                <mat-chip *ngFor="let tag of post.tags">{{ tag }}</mat-chip>
+              </mat-chip-listbox>
+        </mat-card-actions>
+
+    </mat-card>
+</ng-container>

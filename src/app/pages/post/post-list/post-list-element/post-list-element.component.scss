@@ -1,0 +1,42 @@
+a.post-anchor-element {
+    width: 100%;
+    place-content: center;
+    margin-top: 0.5rem;
+
+    &:link,
+    &:visited,
+    &:focus,
+    &:active,
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    mat-card{
+        &.list {
+            flex: 1 1 100%;
+            box-sizing: border-box;
+            max-width: 85%;
+            height: 100%;
+            width: 100%;
+
+
+            mat-card-title.truncated{
+                -webkit-line-clamp: 1;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                display: -webkit-inline-box;
+            }
+        }
+    }
+
+}
+
+

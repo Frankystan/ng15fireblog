@@ -6,9 +6,16 @@
           "ng15fireblog"
         ]
       }
+    },
+    "ng15fireblog-fd04a": {
+      "hosting": {
+        "ng15fireblog": [
+          "ng15fireblog-fd04a"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "ng14fireblog"
+    "default": "ng15fireblog-fd04a"
   }
 }

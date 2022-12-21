@@ -17,4 +17,23 @@ body {
 		top: 0;
 		z-index: 1;
 	}
+
+    mat-divider.inset{
+        margin: 1rem;
+    }
+
+	mat-card {
+		border-radius: 1rem !important;
+
+		mat-form-field {
+			width: 100%;
+			margin: 0.5rem 0 !important;
+		}
+
+		.mat-card-actions {
+			margin: 0;
+		}
+	}
 }
+
+
