@@ -12,18 +12,30 @@ body {
 	margin: 0;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 
+	.content-centered {
+		place-content: center;
+		display: flex;
+	}
+
+	.fx-flex {
+		flex: 1 1 0%;
+		box-sizing: border-box;
+	}
+
 	mat-toolbar.mat-primary {
 		position: sticky;
 		top: 0;
 		z-index: 1;
 	}
 
-    mat-divider.inset{
-        margin: 1rem;
-    }
+	mat-divider.inset {
+		margin: 1rem;
+	}
 
 	mat-card {
 		border-radius: 1rem !important;
+		flex: 1 1 100%;
+		box-sizing: border-box;
 
 		mat-form-field {
 			width: 100%;
@@ -35,26 +47,24 @@ body {
 		}
 	}
 
-    tinymce {
-        margin: 0.5rem 0;
+	tinymce {
+		margin: 0.5rem 0;
 
-        div.tox-editor-header {
+		div.tox-editor-header {
+			z-index: 0 !important;
 
-            z-index: 0 !important;
+			div.tox-toolbar-overlord {
+				box-shadow: 0 2px 2px -2px rgb(34 47 62 / 10%),
+					0 8px 8px -4px rgb(34 47 62 / 7%) !important;
+			}
 
-            div.tox-toolbar-overlord {
-                box-shadow: 0 2px 2px -2px rgb(34 47 62 / 10%), 0 8px 8px -4px rgb(34 47 62 / 7%) !important;
-            }
+			div.tox-promotion {
+				display: none;
+			}
+		}
 
-            div.tox-promotion {
-                display: none;
-            }
-        }
-
-        span.tox-statusbar__branding {
-            display: none;
-        }
-    }
+		span.tox-statusbar__branding {
+			display: none;
+		}
+	}
 }
-
-

@@ -29,4 +29,17 @@ export class PagePostShowComponent implements OnInit{
 			.read(id)
 			.pipe(tap((post) => console.log("post:", post)));
 	}
+
+    bookmark(state: boolean) {
+
+        // if (state) {
+        //     this.user.bookmarks.push(this.id);
+        // } else {
+        //     if (this.user.bookmarks.findIndex(item => item === this.id) >= 0)
+        //         this.user.bookmarks.splice(this.user.bookmarks.findIndex(item => item === this.id), 1);
+        // }
+
+        // this._auth.bookmarks(this.user.bookmarks);
+
+    }
 }

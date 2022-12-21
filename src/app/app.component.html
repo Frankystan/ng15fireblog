@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container">
+<mat-drawer-container>
 	<mat-drawer
 		#drawer
 		fixedInViewport
@@ -7,11 +7,7 @@
 		[opened]="(isHandset$ | async) === false"
 	>
 		<mat-toolbar>Menu</mat-toolbar>
-		<mat-nav-list>
-			<a mat-list-item href="#" routerLink="/show">Link 1</a>
-			<a mat-list-item href="#">Link 2</a>
-			<a mat-list-item href="#">Link 3</a>
-		</mat-nav-list>
+		<app-drawer-nav-list [drawer]="drawer" [isHandset]="(isHandset$ | async)!"></app-drawer-nav-list>
 	</mat-drawer>
 	<mat-drawer-content>
 		<mat-toolbar color="primary" class="mat-elevation-z11">

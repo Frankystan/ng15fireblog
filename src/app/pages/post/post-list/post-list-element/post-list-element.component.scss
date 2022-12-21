@@ -1,4 +1,4 @@
-a.post-anchor-element {
+a {
     width: 100%;
     place-content: center;
     margin-top: 0.5rem;
@@ -18,21 +18,15 @@ a.post-anchor-element {
 
     mat-card{
         &.list {
-            flex: 1 1 100%;
-            box-sizing: border-box;
             max-width: 85%;
-            height: 100%;
-            width: 100%;
-
 
             mat-card-title.truncated{
-                -webkit-line-clamp: 1;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                display: -webkit-box;
                 -webkit-box-orient: vertical;
-                word-wrap: break-word;
+                -webkit-line-clamp: 1;
                 display: -webkit-inline-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
             }
         }
     }

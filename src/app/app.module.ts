@@ -21,6 +21,7 @@ import { AutoFocusDirective } from './directives/autofocus.directive';
 import { AutofoqusDirective } from './directives/autofoqus.directive';
 import { CustomTinymceModule } from "./modules/custom-tinymce.module";
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { DrawerNavListComponent } from './layout/drawer-nav-list/drawer-nav-list.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
         FabEditPostComponent,
         AutoFocusDirective,
         AutofoqusDirective,
+        DrawerNavListComponent,
 	],
 	imports: [
 		AppRoutingModule,

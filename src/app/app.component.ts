@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
 import { filter, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { environment } from "@env/environment";
 import { TranslateService } from "@ngx-translate/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { CustomTitleStrategy } from "./services/custom-title-strategy";
+import { MatDrawer } from "@angular/material/sidenav";
 
 @Component({
 	selector: "app-root",
@@ -14,6 +15,8 @@ import { CustomTitleStrategy } from "./services/custom-title-strategy";
 	styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
+
+    @ViewChild('drawer', { static: true }) public drawer!: MatDrawer;
 
     private _destroy = new Subject<void>();
 
@@ -33,8 +36,7 @@ export class AppComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		//Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-		//Add 'implements OnInit' to the class.
+
 		// Setup translations
 		this._i18n.init(
 			environment.defaultLanguage,
