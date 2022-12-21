@@ -195,7 +195,10 @@
             "title": "Title",
             "content": "Content",
             "featured_image": "Featured image",
-            "tags": "Tags",
+            "tag": {
+                "name":"Tags",
+                "placeholder":"New Tag..."
+            },
             "save": "Save"
         },
         "filters": {

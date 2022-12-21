@@ -195,7 +195,10 @@
             "title": "Título",
             "content": "Contenido",
             "featured_image": "Imagen destacada",
-            "tags": "Etiquetas",
+            "tag": {
+                "name":"Etiquetas",
+                "placeholder":"Nueva Etiqueta..."
+            },
             "save": "Guardar"
         },
         "filters": {

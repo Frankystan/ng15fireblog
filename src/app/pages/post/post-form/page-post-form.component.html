@@ -15,11 +15,28 @@
 					name="featured_image"
 					formControlName="featured_image"
 				/>
-				<mat-error *ngIf="form.get('featured_image')!.hasError('url')">
+				<mat-error>
 					{{ "validation.url" | translate }}
 				</mat-error>
 			</mat-form-field>
-
+			<mat-card-header fxLayoutAlign="center" class="post-create-header">
+				<figure *ngIf="imageURL.value">
+					<img [src]="imageURL.value" />
+					<figcaption fxLayoutAlign="center center">
+						<button
+							id="myDelButton"
+							mat-mini-fab
+							color="primary"
+							(click)="
+								form.controls['featured_image'].setValue('')
+							"
+							aria-label="delete post featured image"
+						>
+							<mat-icon>close</mat-icon>
+						</button>
+					</figcaption>
+				</figure>
+			</mat-card-header>
 			<mat-card-content>
 				<mat-form-field>
 					<input
@@ -34,25 +51,13 @@
 				</mat-form-field>
 
 				<div>
-                    <tinymce matInput name="content" [config]="options" formControlName="content"></tinymce>
-                </div>
-
-				<!-- <editor
-					[init]="{ base_url: '/tinymce', suffix: '.min' }"
-				></editor> -->
-
-				<!-- <editor
-					apiKey="no-api-key"
-					cloudChannel="6"
-					[disabled]="false"
-					id=""
-					[init]="{}"
-					initialValue=""
-					[inline]="false"
-					plugins=""
-					tagName="div"
-					toolbar=""
-				></editor> -->
+					<tinymce
+						matInput
+						name="content"
+						[config]="options"
+						formControlName="content"
+					></tinymce>
+				</div>
 
 				<!-- MATERIAL CHIPS -->
 				<mat-form-field>
@@ -62,6 +67,7 @@
 							(removed)="remove(i)"
 						>
 							{{ tag.value }}
+
 							<button
 								matChipRemove
 								aria-label="'remove ' + keyword"
@@ -69,14 +75,20 @@
 								<mat-icon>cancel</mat-icon>
 							</button>
 						</mat-chip-row>
+
+						<input
+							[placeholder]="
+								'post.input.tag.placeholder' | translate
+							"
+							[matChipInputFor]="chipGrid"
+							[matChipInputAddOnBlur]="addOnBlur"
+							(matChipInputTokenEnd)="add($event)"
+						/>
 					</mat-chip-grid>
-					<input
-						[matChipInputFor]="chipGrid"
-						(matChipInputTokenEnd)="add($event)"
-					/>
 				</mat-form-field>
 			</mat-card-content>
-			<div align="end">
+
+			<mat-card-actions align="end">
 				<button
 					type="submit"
 					color="primary"
@@ -85,10 +97,7 @@
 				>
 					{{ "post.input.save" | translate }}
 				</button>
-			</div>
-			<!-- <div>
-                <pre>{{form.value | json}}</pre>
-            </div> -->
+			</mat-card-actions>
 		</form>
 	</mat-card>
 </div>

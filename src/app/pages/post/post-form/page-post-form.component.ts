@@ -8,7 +8,15 @@ import {
 import { ActivatedRoute } from "@angular/router";
 import { I18nService } from "@app/services/i18n.service";
 import { PostService } from "@app/services/post.service";
-import { Subject, takeUntil } from "rxjs";
+import { distinctUntilChanged, map, Observable, Subject, takeUntil } from "rxjs";
+
+/*
+https://www.angularfix.com/2022/01/angular-2-material-mat-chip-list.html
+https://stackblitz.com/edit/angular-4d5vfj-gywxjz?file=app%2Fchip-list-validation-example.ts
+https://www.lindseybroos.be/2020/06/angular-material-chiplist-with-autocomplete-and-validation/
+https://jasonwatmore.com/post/2020/09/02/angular-combined-add-edit-create-update-form-example
+
+*/
 
 @Component({
 	selector: "app-page-post-form",
@@ -19,7 +27,7 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 	@ViewChild("chipGrid", { static: true }) chipGrid!: MatChipGrid;
 
 	private destroy = new Subject<void>();
-	form!: FormGroup;
+	form: FormGroup = this.postService.form;
 	isAddMode: boolean = false;
 	id!: string;
 	addOnBlur = true;
@@ -36,7 +44,6 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 	) {}
 
 	ngOnInit(): void {
-		this.createForm();
 
 		this.id = this._route.snapshot.params["id"];
 		this.isAddMode = !this.id;
@@ -47,24 +54,13 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 				.pipe(takeUntil(this.destroy))
 				.subscribe((post) => {
 					this.form.patchValue(post);
-					// this.form.controls['featured_image'].setValue("");
+
 					this.form.setControl(
 						"tags",
 						this._fb.array(post.tags || [])
 					);
 				});
 		}
-
-		// this.form
-		// 	.get("tags")
-		// 	?.statusChanges.pipe(takeUntil(this.destroy))
-		// 	.subscribe(
-		// 		(status) => (this.chipList.errorState = status === "INVALID")
-		// 	);
-	}
-
-	private createForm() {
-		this.form = this.postService.form;
 	}
 
 	add(event: MatChipInputEvent): void {

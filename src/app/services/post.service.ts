@@ -45,18 +45,6 @@ export class PostService {
 
         const regex = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
 
-        /*
-        ejemplo con DATOS de inicio
-
-        return this._fb.group({
-            id: [""],
-            title: ["", [Validators.required]],
-            content: ["", Validators.required],
-            featured_image: ["", Validators.pattern(regex)],
-
-            names: this._fb.array(this.data.names, this.validateArrayNotEmpty)
-        });
-        */
         return new FormGroup({
             id: new FormControl(""),
             title: new FormControl("", [Validators.required]),
