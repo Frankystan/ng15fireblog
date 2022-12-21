@@ -5,6 +5,11 @@ import { PagePostComponent } from "./pages/post/page-post.component";
 import { PagePostFormComponent } from "./pages/post/post-form/page-post-form.component";
 import { PagePostListComponent } from "./pages/post/post-list/page-post-list.component";
 import { PagePostShowComponent } from "./pages/post/post-show/page-post-show.component";
+import { PageForgottenPasswordComponent } from "./pages/auth/forgotten-password/page-forgotten-password.component";
+import { PageRegisterComponent } from "./pages/auth/register/page-register.component";
+import { PageLoginComponent } from "./pages/auth/login/page-login.component";
+import { PageEmailVerifiedComponent } from "./pages/auth/email-verified/page-email-verified.component";
+import { PageAuthComponent } from "./pages/auth/auth.component";
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/auth/login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['/posts']);
@@ -16,12 +21,37 @@ const routes: Routes = [
 		title: "title.home",
 		data: { toolbar: "home" },
 	},
-
+    {
+        path: "auth",
+        component: PageAuthComponent,
+        ...canActivate(redirectLoggedInToHome),
+        children: [
+            {
+                path: "login",
+                component: PageLoginComponent,
+                title: "title.login"
+            },
+            {
+                path: "register",
+                component: PageRegisterComponent,
+                title: "title.register"
+            },
+            {
+                path: "forgot-password",
+                component: PageForgottenPasswordComponent,
+                title: "title.reset_password"
+            },
+            {
+                path: "verify-email",
+                component: PageEmailVerifiedComponent,
+                title: "title.verify_account"
+            }
+        ]
+    },
     {
         path: "posts",
         component: PagePostComponent,
-        // ...canActivate(redirectUnauthorizedToLogin),
-
+        ...canActivate(redirectUnauthorizedToLogin),
         children: [
             {
                 path: "",

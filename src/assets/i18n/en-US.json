@@ -36,7 +36,7 @@
         "logged_in": "You are already logged in",
         "close": "CLOSE",
         "reset_pwd": "Email sent, please check your inbox",
-        "signup": "Registered correctly, now loggining",
+        "register": "Registered correctly, now loggining",
         "profile": "Your Profile has been updated",
         "firebase": {
             "auth/account-exists-with-different-credential": "Account already exists with differents credentials",
@@ -114,7 +114,7 @@
         },
         "reset_password": "Reset Password",
         "settings": "Settings",
-        "signup": "Sign Up",
+        "register": "Register",
         "uploads": "Upload Image"
     },
     "navbar": {
@@ -151,7 +151,7 @@
         "policy": "Privacy Policy",
         "uploads": "Upload Image",
         "settings": "Settings",
-        "signup": "Sign Up",
+        "register": "Register",
         "wall": "Wall"
     },
     "settings": {

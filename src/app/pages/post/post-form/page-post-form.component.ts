@@ -87,6 +87,10 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 		return <FormArray>this.form.get("tags");
 	}
 
+    errorHandling = (control: string, error: string) => {
+        return this.form.controls[control].hasError(error);
+    }
+
 	save() {
 		console.log("guardado:", this.form.value);
 
@@ -96,6 +100,7 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 		// 	this.postService.update(this.form.value);
 		// }
 	}
+
 
 	ngOnDestroy(): void {
 		this.destroy.next();

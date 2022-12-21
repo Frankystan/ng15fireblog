@@ -15,9 +15,10 @@
 					name="featured_image"
 					formControlName="featured_image"
 				/>
-				<mat-error>
-					{{ "validation.url" | translate }}
-				</mat-error>
+                <mat-error *ngIf="errorHandling('featured_image', 'pattern')">
+                    {{ "validation.url" | translate }}
+                </mat-error>
+
 			</mat-form-field>
 			<mat-card-header fxLayoutAlign="center" class="post-create-header">
 				<figure *ngIf="imageURL.value">
@@ -45,9 +46,9 @@
 						name="title"
 						formControlName="title"
 					/>
-					<mat-error>
-						{{ "validation.required" | translate }}
-					</mat-error>
+                    <mat-error *ngIf="errorHandling('title', 'required')">
+                        {{ "validation.required" | translate }}
+                    </mat-error>
 				</mat-form-field>
 
 				<div>
@@ -77,9 +78,7 @@
 						</mat-chip-row>
 
 						<input
-							[placeholder]="
-								'post.input.tag.placeholder' | translate
-							"
+							[placeholder]="'post.input.tag.placeholder' | translate"
 							[matChipInputFor]="chipGrid"
 							[matChipInputAddOnBlur]="addOnBlur"
 							(matChipInputTokenEnd)="add($event)"
@@ -93,7 +92,7 @@
 					type="submit"
 					color="primary"
 					mat-raised-button
-					[disabled]="form.invalid"
+					[disabled]="!form.valid && (form.dirty || form.untouched)"
 				>
 					{{ "post.input.save" | translate }}
 				</button>

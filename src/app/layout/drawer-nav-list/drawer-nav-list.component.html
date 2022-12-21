@@ -1,5 +1,46 @@
 <mat-nav-list (click)="close()">
-    <a mat-list-item href="#" routerLink="/show">Link 1</a>
-    <a mat-list-item href="#">Link 2</a>
-    <a mat-list-item href="#">Link 3</a>
+
+    <a mat-list-item routerLinkActive="active" routerLink="/posts">
+        <mat-icon mdListIcon>home</mat-icon>
+        {{ 'sidenav.wall' | translate }}
+    </a>
+
+    <a mat-list-item routerLinkActive="active" routerLink="/apps">
+        <mat-icon mdListIcon>dashboard</mat-icon>
+        {{ 'sidenav.apps' | translate }}
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/uploads">
+        <mat-icon mdListIcon>upload_file</mat-icon>
+        <span>{{ 'sidenav.uploads' | translate }}</span>
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/upload-dialog">
+        <mat-icon mdListIcon>assignment</mat-icon>
+        {{ 'sidenav.polls' | translate }}
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/appointments">
+        <mat-icon mdListIcon>date_range</mat-icon>
+        {{ 'sidenav.appointments' | translate }}
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/feeds">
+        <mat-icon mdListIcon>rss_feed</mat-icon>
+        {{ 'sidenav.feeds' | translate }}
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item routerLinkActive="active" routerLink="/settings">
+        <mat-icon mdListIcon>settings</mat-icon>
+        {{ 'sidenav.settings' | translate }}
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/faq">
+        <mat-icon mdListIcon>help</mat-icon>
+        {{ 'sidenav.help' | translate }}
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/policy">
+        <mat-icon mdListIcon>verified_user</mat-icon>
+        {{ 'sidenav.policy' | translate }}
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item (click)="logout()">
+        <mat-icon mdListIcon>power_settings_new</mat-icon>
+        {{ 'sidenav.logout' | translate }}
+    </a>
 </mat-nav-list>

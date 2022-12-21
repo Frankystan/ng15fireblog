@@ -11,7 +11,8 @@
 			<mat-card-subtitle>
 				<time>
 					{{
-						post.created_at! * 1000 | amDateFormat : "DD-MM-YYYY HH:mm"
+						post.created_at! * 1000
+							| amDateFormat : "DD-MM-YYYY HH:mm"
 					}}
 					(
 					{{
@@ -22,10 +23,29 @@
 			</mat-card-subtitle>
 			<span class="fx-flex"></span>
 
-            <span>
-                <mat-icon (click)="bookmark(false)">bookmark</mat-icon>
-            </span>
+			<ng-container
+				*ngIf="
+					isBookMarked$ | async;
+					then bookMarked;
+					else notBookMarked
+				"
+			></ng-container>
 
+			<ng-template #bookMarked>
+				<span>
+					<mat-icon (click)="bookmark(false)">bookmark</mat-icon>
+				</span>
+			</ng-template>
+
+			<ng-template #notBookMarked>
+				<span>
+					<mat-icon
+						class="material-symbols-outlined"
+						(click)="bookmark(true)"
+						>bookmark_add</mat-icon
+					>
+				</span>
+			</ng-template>
 		</mat-card-header>
 		<!-- only displays when this is in viewport -->
 		<!-- <img lazySrcVisible="visible" mat-card-image [lazySrc]="post.featured_image && post.featured_image !=''   ? post.featured_image : './../../../assets/img/blog.jpg'" /> -->

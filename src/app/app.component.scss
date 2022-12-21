@@ -5,7 +5,14 @@ mat-drawer-container {
 	width: 100vw;
 
 	mat-drawer {
-		width: 15rem;
+		width: 16rem;
+
+        mat-nav-list{
+            .mat-mdc-list-item .mdc-list-item__primary-text {
+                color: red ;
+                display: flex  ;
+            }
+        }
 	}
 
 	mat-drawer-content {

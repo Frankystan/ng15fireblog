@@ -22,21 +22,30 @@ import { AutofoqusDirective } from './directives/autofoqus.directive';
 import { CustomTinymceModule } from "./modules/custom-tinymce.module";
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { DrawerNavListComponent } from './layout/drawer-nav-list/drawer-nav-list.component';
-
+import { PageLoginComponent } from './pages/auth/login/page-login.component';
+import { PageRegisterComponent } from './pages/auth/register/page-register.component';
+import { PageForgottenPasswordComponent } from './pages/auth/forgotten-password/page-forgotten-password.component';
+import { PageEmailVerifiedComponent } from './pages/auth/email-verified/page-email-verified.component';
+import { PageAuthComponent } from "./pages/auth/auth.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
-        PagePostListComponent,
-        PostListElementComponent,
-        PagePostShowComponent,
-        PagePostFormComponent,
-        PagePostComponent,
-        FabCreatePostComponent,
-        FabEditPostComponent,
         AutoFocusDirective,
         AutofoqusDirective,
         DrawerNavListComponent,
+        FabCreatePostComponent,
+        FabEditPostComponent,
+        PageAuthComponent,
+        PageEmailVerifiedComponent,
+        PageForgottenPasswordComponent,
+        PageLoginComponent,
+        PagePostComponent,
+        PagePostFormComponent,
+        PagePostListComponent,
+        PagePostShowComponent,
+        PageRegisterComponent,
+        PostListElementComponent,
 	],
 	imports: [
 		AppRoutingModule,

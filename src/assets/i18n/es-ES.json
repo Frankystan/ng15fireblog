@@ -37,7 +37,7 @@
         "close": "CERRAR",
         "profile": "Tu perfil ha sido actualizado",
         "reset_pwd": "Email enviado, revisa tu correo",
-        "signup": "Registrado correctamente, iniciando sesión",
+        "register": "Registrado correctamente, iniciando sesión",
         "firebase": {
             "auth/account-exists-with-different-credential": "La cuenta existe con credenciales distintas",
             "auth/email-already-in-use": "El email ya lo usa otro usuario.",
@@ -114,7 +114,7 @@
         "profile-visiting": "Visitando perfil",
         "reset_password": "Resetear Contraseña",
         "settings": "Ajustes",
-        "signup": "Regístrate",
+        "register": "Regístrate",
         "uploads": "Subir imagen"
     },
     "navbar": {
@@ -151,7 +151,7 @@
         "policy":"Política de privacidad",
         "uploads": "Subir imagen",
         "settings": "Ajustes",
-        "signup": "Regístrate",
+        "register": "Regístrate",
         "wall": "Muro"
     },
     "settings": {

@@ -26,11 +26,11 @@ export class CustomTitleStrategy extends TitleStrategy {
 
             this.translateService.get(title).subscribe((translatedTitle) => {
 
-                this.title.setTitle(`Workfield | ${translatedTitle}`);
+                this.title.setTitle(`Ng15FireBlog | ${translatedTitle}`);
             })
         } else {
             // this.title.setTitle('DEFAULT_TITLE');
-            this.title.setTitle('Workfield');
+            this.title.setTitle('Ng15FireBlog');
         }
     }
 }
