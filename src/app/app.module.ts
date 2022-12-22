@@ -27,6 +27,13 @@ import { PageRegisterComponent } from './pages/auth/register/page-register.compo
 import { PageForgottenPasswordComponent } from './pages/auth/forgotten-password/page-forgotten-password.component';
 import { PageEmailVerifiedComponent } from './pages/auth/email-verified/page-email-verified.component';
 import { PageAuthComponent } from "./pages/auth/auth.component";
+import { HomeComponent } from './pages/home/home.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
 	declarations: [
@@ -46,6 +53,7 @@ import { PageAuthComponent } from "./pages/auth/auth.component";
         PagePostShowComponent,
         PageRegisterComponent,
         PostListElementComponent,
+        HomeComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -59,6 +67,12 @@ import { PageAuthComponent } from "./pages/auth/auth.component";
         FormsModule,
         ReactiveFormsModule,
         NgxTinymceModule,
+        MatGridListModule,
+        MatCardModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        LayoutModule,
 	],
 	providers: [
         { provide: TitleStrategy, useClass: CustomTitleStrategy }

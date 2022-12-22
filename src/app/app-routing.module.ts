@@ -10,6 +10,7 @@ import { PageRegisterComponent } from "./pages/auth/register/page-register.compo
 import { PageLoginComponent } from "./pages/auth/login/page-login.component";
 import { PageEmailVerifiedComponent } from "./pages/auth/email-verified/page-email-verified.component";
 import { PageAuthComponent } from "./pages/auth/auth.component";
+import { HomeComponent } from "./pages/home/home.component";
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/auth/login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['/posts']);
@@ -17,7 +18,13 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['/posts']);
 const routes: Routes = [
 	{
 		path: "",
-		component: PagePostListComponent,
+		component: HomeComponent,
+		title: "title.home",
+		data: { toolbar: "home" },
+	},
+    {
+		path: "home",
+		component: HomeComponent,
 		title: "title.home",
 		data: { toolbar: "home" },
 	},

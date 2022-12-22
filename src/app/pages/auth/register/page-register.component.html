@@ -1,105 +1,107 @@
-<mat-card
-	fxLayout="column"
-	fxFlex="100"
-	fxFlex.sm="60"
-	fxFlex.md="50"
-	fxFlex.lg="40"
->
-	<form
-		autocomplete="off"
-		novalidate
-		[formGroup]="form"
-		(submit)="save()">
-		<mat-card-header>
-			<mat-card-title>Register</mat-card-title>
-		</mat-card-header>
+<div class="content-centered">
+    <mat-card
+        fxLayout="column"
+        fxFlex="100"
+        fxFlex.sm="60"
+        fxFlex.md="50"
+        fxFlex.lg="40"
+    >
+        <form
+            autocomplete="off"
+            novalidate
+            [formGroup]="form"
+            (submit)="save()">
+            <mat-card-header>
+                <mat-card-title>Register</mat-card-title>
+            </mat-card-header>
 
-		<mat-card-content>
-			<mat-form-field>
-				<input
-					autofocus
-					matInput
-					[placeholder]="'auth.input.name' | translate"
-					name="displayName"
-					formControlName="displayName"
-				/>
-                <mat-error *ngIf="form.get('displayName')?.invalid">{{getErrorMessage('displayName') |translate}}</mat-error>
-			</mat-form-field>
+            <mat-card-content>
+                <mat-form-field>
+                    <input
+                        autofocus
+                        matInput
+                        [placeholder]="'auth.input.name' | translate"
+                        name="displayName"
+                        formControlName="displayName"
+                    />
+                    <mat-error *ngIf="form.get('displayName')?.invalid">{{getErrorMessage('displayName') |translate}}</mat-error>
+                </mat-form-field>
 
-			<mat-form-field>
-				<input
-					matInput
-					[placeholder]="'auth.input.email' | translate"
-					name="email"
-					formControlName="email"
-				/>
-                <mat-error *ngIf="form.get('email')?.invalid">{{getErrorMessage('email') |translate}}</mat-error>
-			</mat-form-field>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [placeholder]="'auth.input.email' | translate"
+                        name="email"
+                        formControlName="email"
+                    />
+                    <mat-error *ngIf="form.get('email')?.invalid">{{getErrorMessage('email') |translate}}</mat-error>
+                </mat-form-field>
 
-			<mat-form-field>
-				<input
-					matInput
-					[placeholder]="'auth.input.password' | translate"
-					name="password"
-					formControlName="password"
-					[type]="hide ? 'password' : 'text'"
-				/>
-                <mat-error *ngIf="form.get('password')?.invalid">{{getErrorMessage('password') |translate}}</mat-error>
-				<mat-icon matSuffix (click)="hide = !hide">{{
-					hide ? "visibility" : "visibility_off"
-				}}</mat-icon>
-			</mat-form-field>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [placeholder]="'auth.input.password' | translate"
+                        name="password"
+                        formControlName="password"
+                        [type]="hide ? 'password' : 'text'"
+                    />
+                    <mat-error *ngIf="form.get('password')?.invalid">{{getErrorMessage('password') |translate}}</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{
+                        hide ? "visibility" : "visibility_off"
+                    }}</mat-icon>
+                </mat-form-field>
 
-			<mat-form-field>
-				<input
-					matInput
-					[placeholder]="'auth.input.password_confirm' | translate"
-					name="password_confirm"
-					formControlName="password_confirm"
-					[type]="hide ? 'password' : 'text'"
-				/>
-				<mat-icon matSuffix (click)="hide = !hide">{{
-					hide ? "visibility" : "visibility_off"
-				}}</mat-icon>
-                <mat-error *ngIf="form.get('password_confirm')?.invalid">{{getErrorMessage('password_confirm') |translate}}</mat-error>
-			</mat-form-field>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [placeholder]="'auth.input.password_confirm' | translate"
+                        name="password_confirm"
+                        formControlName="password_confirm"
+                        [type]="hide ? 'password' : 'text'"
+                    />
+                    <mat-icon matSuffix (click)="hide = !hide">{{
+                        hide ? "visibility" : "visibility_off"
+                    }}</mat-icon>
+                    <mat-error *ngIf="form.get('password_confirm')?.invalid">{{getErrorMessage('password_confirm') |translate}}</mat-error>
+                </mat-form-field>
 
-			<mat-form-field>
-				<input
-					matInput
-					[placeholder]="'auth.input.img' | translate"
-					name="photoURL"
-					formControlName="photoURL"
-					#imageURL
-				/>
-                <mat-error *ngIf="form.get('photoURL')?.invalid">{{getErrorMessage('photoURL') |translate}}</mat-error>
-			</mat-form-field>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [placeholder]="'auth.input.img' | translate"
+                        name="photoURL"
+                        formControlName="photoURL"
+                        #imageURL
+                    />
+                    <mat-error *ngIf="form.get('photoURL')?.invalid">{{getErrorMessage('photoURL') |translate}}</mat-error>
+                </mat-form-field>
 
-			<!-- <img *ngIf="imageURL.value" mat-card-image [src]="imageURL.value" class="image-url"> -->
+                <!-- <img *ngIf="imageURL.value" mat-card-image [src]="imageURL.value" class="image-url"> -->
 
-			<!-- <ngx-recaptcha2 #captchaElem
-                formControlName="recaptcha"
-                name="recaptcha"
-                [size]="size"
-                [hl]="i18n.language"
-                [theme]="theme"
-                [type]="type"
-                [siteKey]="siteKey"
-                (expire)="handleExpire()"
-                (load)="handleLoad()"
-                (success)="handleSuccess($event)">
-            </ngx-recaptcha2> -->
-		</mat-card-content>
+                <!-- <ngx-recaptcha2 #captchaElem
+                    formControlName="recaptcha"
+                    name="recaptcha"
+                    [size]="size"
+                    [hl]="i18n.language"
+                    [theme]="theme"
+                    [type]="type"
+                    [siteKey]="siteKey"
+                    (expire)="handleExpire()"
+                    (load)="handleLoad()"
+                    (success)="handleSuccess($event)">
+                </ngx-recaptcha2> -->
+            </mat-card-content>
 
-		<mat-card-actions align="end">
-			<button
-				type="submit"
-				color="primary"
-				mat-raised-button
-				[disabled]="!form.valid && (form.dirty || form.untouched)"
-			>
-				{{ "auth.register.button" | translate }}
-			</button>
-		</mat-card-actions>
-	</form>
-</mat-card>
+            <mat-card-actions align="end">
+                <button
+                    type="submit"
+                    color="primary"
+                    mat-raised-button
+                    [disabled]="!form.valid && (form.dirty || form.untouched)"
+                >
+                    {{ "auth.register.button" | translate }}
+                </button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

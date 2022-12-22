@@ -63,18 +63,23 @@ body {
 	}
 
 	.content-centered {
-		place-content: center;
 		display: flex;
+		place-content: center;
+		align-items: center;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.content > * {
+		width: 100%;
+		// display: flex;
+		// align-items: center;
+		// flex-direction: column;
 	}
 
 	.space-between {
 		display: flex;
 		place-content: center space-between;
-	}
-
-	.fx-flex {
-		flex: 1 1 0%;
-		box-sizing: border-box;
 	}
 
 	mat-nav-list {
@@ -99,4 +104,22 @@ body {
 			}
 		}
 	}
+}
+
+// FLEX LAYOUT CLASSES
+.fx-layout-row {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.fx-layout-column {
+	flex-direction: column;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.fx-flex {
+	flex: 1 1 0%;
+	box-sizing: border-box;
 }
