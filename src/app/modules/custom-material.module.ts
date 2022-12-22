@@ -34,8 +34,8 @@ import {CdkMenuModule} from '@angular/cdk/menu';
 
 let MatModules = [
     BrowserAnimationsModule,
-    LayoutModule,
     CdkMenuModule,
+    LayoutModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -52,7 +52,6 @@ let MatModules = [
     MatPaginatorModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatRadioModule,
     MatRadioModule,
     MatSelectModule,
     MatSidenavModule,

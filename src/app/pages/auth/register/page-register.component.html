@@ -23,9 +23,7 @@
 					name="displayName"
 					formControlName="displayName"
 				/>
-				<mat-error *ngIf="errorHandling('displayName', 'required')">
-                    {{ 'validation.required' | translate }}
-                </mat-error>
+                <mat-error *ngIf="form.get('displayName')?.invalid">{{getErrorMessage('displayName') |translate}}</mat-error>
 			</mat-form-field>
 
 			<mat-form-field>
@@ -35,12 +33,7 @@
 					name="email"
 					formControlName="email"
 				/>
-                <mat-error *ngIf="errorHandling('email', 'required')">
-					{{ "validation.required" | translate }}
-				</mat-error>
-                <mat-error *ngIf="errorHandling('email', 'email')">
-					{{ "validation.email" | translate }}
-				</mat-error>
+                <mat-error *ngIf="form.get('email')?.invalid">{{getErrorMessage('email') |translate}}</mat-error>
 			</mat-form-field>
 
 			<mat-form-field>
@@ -51,12 +44,7 @@
 					formControlName="password"
 					[type]="hide ? 'password' : 'text'"
 				/>
-                <mat-error *ngIf="errorHandling('password', 'required')">
-					{{ "validation.required" | translate }}
-				</mat-error>
-				<mat-error *ngIf="errorHandling('password', 'minlength')">
-					{{ "validation.minlength" | translate }}
-				</mat-error>
+                <mat-error *ngIf="form.get('password')?.invalid">{{getErrorMessage('password') |translate}}</mat-error>
 				<mat-icon matSuffix (click)="hide = !hide">{{
 					hide ? "visibility" : "visibility_off"
 				}}</mat-icon>
@@ -73,24 +61,18 @@
 				<mat-icon matSuffix (click)="hide = !hide">{{
 					hide ? "visibility" : "visibility_off"
 				}}</mat-icon>
-
-                <mat-error *ngIf="errorHandling('password_confirm', 'pwdMatch')">
-					{{ "validation.pwd_match" | translate }}
-				</mat-error>
-
+                <mat-error *ngIf="form.get('password_confirm')?.invalid">{{getErrorMessage('password_confirm') |translate}}</mat-error>
 			</mat-form-field>
 
 			<mat-form-field>
 				<input
 					matInput
-					[placeholder]="'auth.input.img_op' | translate"
+					[placeholder]="'auth.input.img' | translate"
 					name="photoURL"
 					formControlName="photoURL"
 					#imageURL
 				/>
-				<mat-error *ngIf="errorHandling('photoURL', 'pattern')">
-					{{ "validation.url" | translate }}
-				</mat-error>
+                <mat-error *ngIf="form.get('photoURL')?.invalid">{{getErrorMessage('photoURL') |translate}}</mat-error>
 			</mat-form-field>
 
 			<!-- <img *ngIf="imageURL.value" mat-card-image [src]="imageURL.value" class="image-url"> -->

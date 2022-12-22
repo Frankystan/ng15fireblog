@@ -15,9 +15,9 @@
 					name="featured_image"
 					formControlName="featured_image"
 				/>
-                <mat-error *ngIf="errorHandling('featured_image', 'pattern')">
-                    {{ "validation.url" | translate }}
-                </mat-error>
+                <mat-error *ngIf="form.get('featured_image')?.invalid">{{
+					getErrorMessage("featured_image") | translate
+				}}</mat-error>
 
 			</mat-form-field>
 			<mat-card-header fxLayoutAlign="center" class="post-create-header">
@@ -46,9 +46,9 @@
 						name="title"
 						formControlName="title"
 					/>
-                    <mat-error *ngIf="errorHandling('title', 'required')">
-                        {{ "validation.required" | translate }}
-                    </mat-error>
+                    <mat-error *ngIf="form.get('title')?.invalid">{{
+                        getErrorMessage("title") | translate
+                    }}</mat-error>
 				</mat-form-field>
 
 				<div>

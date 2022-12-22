@@ -87,9 +87,26 @@ export class PagePostFormComponent implements OnInit, OnDestroy {
 		return <FormArray>this.form.get("tags");
 	}
 
-    errorHandling = (control: string, error: string) => {
-        return this.form.controls[control].hasError(error);
-    }
+    getErrorMessage(control: string) {
+		let errors = <Object>this.form.controls[control].errors;
+
+		let key = Object.keys(errors)[0];
+
+		switch (key) {
+			case "required":
+				return "validation.required";
+			case "email":
+				return "validation.email";
+			case "minlength":
+				return "validation.minlength";
+			case "pwdMatch":
+				return "validation.pwd_match";
+			case "pattern":
+				return "validation.url";
+			default:
+				return "";
+		}
+	}
 
 	save() {
 		console.log("guardado:", this.form.value);
