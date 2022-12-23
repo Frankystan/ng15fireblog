@@ -41,7 +41,7 @@ export class PageSettingsComponent implements OnInit , OnDestroy {
 
 
         this.user$ = this._auth.loggedInUser$.pipe(tap(user => {
-            let set: any = user.settings;
+            let set: ISettings = <ISettings>user.settings;
             this.form.patchValue(set);
             this.user = user;
             this.ischecked = set.darkTheme;

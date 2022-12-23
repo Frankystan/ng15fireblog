@@ -1,1 +1,25 @@
+mat-card {
+	max-width: 75%;
 
+	.action {
+		display: flex;
+		flex-direction: row;
+		/* place-content: center; */
+		align-items: center;
+	}
+
+    .text{
+        margin: 0.5rem 0;
+        flex: 1 1 100%
+    }
+
+    mat-form-field{
+        width: auto;
+    }
+
+	mat-icon.action {
+		align-self: center;
+		margin-right: 1rem;
+        flex: none;
+	}
+}
