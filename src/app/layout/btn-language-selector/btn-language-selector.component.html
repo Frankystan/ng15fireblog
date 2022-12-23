@@ -1,0 +1,29 @@
+<button mat-stroked-button [matMenuTriggerFor]="langMenu" fxHide.xs="true">
+	<mat-icon style="order: 0; margin-left: 4px">language</mat-icon>
+	<span style="order: 1; line-height: 0px">
+		{{ "navbar.language" | translate }}</span
+	>
+	<mat-icon style="order: 2; margin: 0">arrow_drop_down</mat-icon>
+</button>
+
+<!-- <button fxHide.gt-xs="true" matTooltip="{{ 'tooltips.language' | translate }}" [matTooltipClass]="'tooltip'"
+    mat-icon-button [matMenuTriggerFor]="langMenu">
+    <mat-icon>language</mat-icon>
+</button> -->
+
+<mat-menu #langMenu="matMenu">
+	<ng-template matMenuContent>
+		<button
+			mat-menu-item
+			*ngFor="let language of languages"
+			(click)="setLanguage(language)"
+		>
+			<img
+				class="flag flag-{{
+					language.split('-')[1].toLocaleLowerCase()
+				}}"
+			/>
+			<span>{{ language.split("-")[1] == "ES" ? "Español" : "English" }}</span>
+		</button>
+	</ng-template>
+</mat-menu>

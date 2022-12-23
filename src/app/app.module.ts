@@ -34,6 +34,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
+import { BtnDrawerComponent } from "./layout/btn-drawer/btn-drawer.component";
+import { BtnLanguageSelectorComponent } from "./layout/btn-language-selector/btn-language-selector.component";
+import { PageSettingsComponent } from "./pages/settings/page-settings.component";
 
 @NgModule({
 	declarations: [
@@ -52,8 +55,11 @@ import { LayoutModule } from '@angular/cdk/layout';
         PagePostListComponent,
         PagePostShowComponent,
         PageRegisterComponent,
+        PageSettingsComponent,
         PostListElementComponent,
         HomeComponent,
+        BtnDrawerComponent,
+        BtnLanguageSelectorComponent,
 	],
 	imports: [
 		AppRoutingModule,

@@ -1,0 +1,34 @@
+button {
+	display: flex;
+	align-items: center;
+	padding: 0 4px;
+
+	> * {
+		display: flex;
+	}
+
+	mat-icon {
+		font-size: 24px;
+		height: 24px;
+		width: 24px;
+	}
+}
+
+::ng-deep .mat-mdc-menu-panel.mat-mdc-menu-panel {
+    width: 8.5rem;
+
+    button {
+        display: flex;
+        flex-direction: row;
+        padding: 0 0.75rem;
+
+
+
+        img {
+            margin: 0;
+            margin-right: 4px;
+        }
+    }
+
+
+}

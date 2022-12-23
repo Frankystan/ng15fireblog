@@ -7,21 +7,11 @@ mat-drawer-container {
 	mat-drawer {
 		width: 16rem;
 
-        mat-nav-list{
-            .mat-mdc-list-item .mdc-list-item__primary-text {
-                color: red ;
-                display: flex  ;
-            }
-        }
-	}
-
-	mat-drawer-content {
-		.content {
-			flex-direction: column;
-			box-sizing: border-box;
-			display: flex;
-			align-items: center;
-            margin: 0.5rem;
+		mat-nav-list {
+			.mat-mdc-list-item .mdc-list-item__primary-text {
+				color: red;
+				display: flex;
+			}
 		}
 	}
 }

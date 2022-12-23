@@ -11,6 +11,7 @@ import { PageLoginComponent } from "./pages/auth/login/page-login.component";
 import { PageEmailVerifiedComponent } from "./pages/auth/email-verified/page-email-verified.component";
 import { PageAuthComponent } from "./pages/auth/auth.component";
 import { HomeComponent } from "./pages/home/home.component";
+import { PageSettingsComponent } from "./pages/settings/page-settings.component";
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/auth/login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['/posts']);
@@ -90,6 +91,14 @@ const routes: Routes = [
                 title: "title.posts.edit"
             }],
 
+    },
+
+    {
+        path: "settings",
+        component: PageSettingsComponent,
+        ...canActivate(redirectUnauthorizedToLogin),
+        // canActivate: [AuthGuard],
+        title: "title.settings",
     },
 
 	//Wild Card Route for 404 request

@@ -1,3 +1,5 @@
+import { ISettings } from "./settings.interface";
+
 export class IUser {
     // lastSignInLocation?: google.maps.LatLng;
     uid: string = "";
@@ -12,6 +14,6 @@ export class IUser {
     providerId?: string = "";
     ps?: string = "";
     workPlace?: string = "";
-    settings?: { darkTheme: boolean, language: string } = { darkTheme: false, language: "" };
+    settings?: ISettings
 
 }
