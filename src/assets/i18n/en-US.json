@@ -1,4 +1,7 @@
 {
+    "button":{
+        "language": "Language"
+    },
     "input": {
         "confirm_password": "Confirm password",
         "email": "Email",

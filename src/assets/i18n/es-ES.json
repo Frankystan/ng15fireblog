@@ -1,4 +1,7 @@
 {
+    "button":{
+        "language": "Idioma"
+    },
     "input": {
         "confirm_password": "Confirma contraseña",
         "email": "Correo electrónico",
