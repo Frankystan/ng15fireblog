@@ -1,5 +1,5 @@
 <div class="content-centered">
-	<mat-card *ngIf="user$ |async">
+	<mat-card *ngIf="user$ | async">
 		<form
 			autocomplete="off"
 			novalidate
@@ -7,87 +7,75 @@
 			(submit)="save()"
 		>
 			<mat-card-content>
-				<h3 matSubheader>
-					{{ "settings.appearance.section" | translate }}
-				</h3>
-				<div style="display: flex; flex-direction: row">
-					<mat-icon class="action">palette</mat-icon>
-					<div class="text">
-						<h4>
-							{{ "settings.appearance.title" | translate }}
-						</h4>
-						<p>
-							{{ "settings.appearance.description" | translate }}
-						</p>
+				<mat-list>
+					<div mat-subheader>
+						{{ "page.settings.appearance.section" | translate }}
 					</div>
-					<span class="fx-flex"></span>
-					<span class="action space-between">
-						<mat-icon> light_mode </mat-icon>
-						<!-- <mat-icon [ngClass]="ischecked ? 'material-icons' : 'material-icons-outlined' "
-                                [color]="ischecked ? 'accent' : ''" style="margin-right: 1rem;">
-                                nights_stay</mat-icon> -->
+					<div style="display: flex; flex-direction: row">
+						<mat-list-item>
+							<mat-icon matListItemIcon>palette</mat-icon>
+							<div matListItemTitle>
+								{{ "page.settings.appearance.title" | translate }}
+							</div>
+							<div matListItemLine>
+								{{
+									"page.settings.appearance.subtitle"
+										| translate
+								}}
+							</div>
+						</mat-list-item>
+						<span class="fx-flex"></span>
 
+						<mat-icon matListIcon>light_mode</mat-icon>
 						<mat-slide-toggle
 							name="darkTheme"
 							formControlName="darkTheme"
 							(change)="onChange($event)"
-						>
-						</mat-slide-toggle>
-						<mat-icon> dark_mode </mat-icon>
-					</span>
-				</div>
-				<mat-divider></mat-divider>
-				<h3 matSubheader>{{ "settings.other" | translate }}</h3>
-				<div
-					style="
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-					"
-				>
-					<mat-icon class="action">language</mat-icon>
-					<div class="text">
-						<h4>
-							{{ "settings.language.title" | translate }}
-						</h4>
-						<p>
-							{{ "settings.language.description" | translate }}
-						</p>
+						></mat-slide-toggle>
+						<mat-icon matListIcon>dark_mode</mat-icon>
 					</div>
-					<span class="fx-flex"></span>
-					<mat-form-field>
-						<mat-select
-							class="action"
-							[placeholder]="
-								'settings.language.input' | translate
-							"
-							[value]="language"
-							name="language"
-							formControlName="language"
-						>
-							<mat-option
-								*ngFor="let language of languages"
-								[value]="language"
-							>
+					<mat-divider></mat-divider>
+					<div mat-subheader>{{ "page.settings.others.section" | translate }}</div>
+
+					<div style="display: flex; flex-direction: row">
+						<mat-list-item>
+							<mat-icon matListItemIcon>language</mat-icon>
+							<div matListItemTitle>
+								{{ "page.settings.others.title" | translate }}
+							</div>
+							<div matListItemLine>
 								{{
-									language.split("-")[1] == "ES"
-										? "Español"
-										: "English"
+									"page.settings.others.subtitle" | translate
 								}}
-							</mat-option>
-						</mat-select>
-					</mat-form-field>
-				</div>
+							</div>
+						</mat-list-item>
+						<span class="fx-flex"></span>
+						<mat-form-field fxFlex="23">
+							<mat-select
+								[placeholder]="
+									'settings.language.input' | translate
+								"
+								[value]="language"
+								name="language"
+								formControlName="language"
+							>
+								<mat-option
+									*ngFor="let language of languages"
+									[value]="language"
+								>
+									{{
+										language.split("-")[1] == "ES"
+											? "Español"
+											: "English"
+									}}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</div>
+				</mat-list>
 			</mat-card-content>
 			<mat-card-actions align="end">
-				<button
-					type="submit"
-					color="primary"
-					mat-raised-button
-					[disabled]="!form.valid && (form.dirty || form.untouched)"
-				>
-					{{ "post.input.save" | translate }}
-				</button>
+				<button color="primary" mat-raised-button>{{ "input.save" | translate }}</button>
 			</mat-card-actions>
 		</form>
 	</mat-card>

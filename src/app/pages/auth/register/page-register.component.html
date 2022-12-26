@@ -12,7 +12,7 @@
             [formGroup]="form"
             (submit)="save()">
             <mat-card-header>
-                <mat-card-title>Register</mat-card-title>
+                <mat-card-title>{{ "page.register.section" | translate }} </mat-card-title>
             </mat-card-header>
 
             <mat-card-content>
@@ -20,7 +20,7 @@
                     <input
                         autofocus
                         matInput
-                        [placeholder]="'auth.input.name' | translate"
+                        [placeholder]="'input.name' | translate"
                         name="displayName"
                         formControlName="displayName"
                     />
@@ -30,7 +30,7 @@
                 <mat-form-field>
                     <input
                         matInput
-                        [placeholder]="'auth.input.email' | translate"
+                        [placeholder]="'input.email' | translate"
                         name="email"
                         formControlName="email"
                     />
@@ -40,7 +40,7 @@
                 <mat-form-field>
                     <input
                         matInput
-                        [placeholder]="'auth.input.password' | translate"
+                        [placeholder]="'input.password' | translate"
                         name="password"
                         formControlName="password"
                         [type]="hide ? 'password' : 'text'"
@@ -54,21 +54,21 @@
                 <mat-form-field>
                     <input
                         matInput
-                        [placeholder]="'auth.input.password_confirm' | translate"
-                        name="password_confirm"
-                        formControlName="password_confirm"
+                        [placeholder]="'input.confirm_password' | translate"
+                        name="confirm_password"
+                        formControlName="confirm_password"
                         [type]="hide ? 'password' : 'text'"
                     />
                     <mat-icon matSuffix (click)="hide = !hide">{{
                         hide ? "visibility" : "visibility_off"
                     }}</mat-icon>
-                    <mat-error *ngIf="form.get('password_confirm')?.invalid">{{getErrorMessage('password_confirm') |translate}}</mat-error>
+                    <mat-error *ngIf="form.get('confirm_password')?.invalid">{{getErrorMessage('confirm_password') |translate}}</mat-error>
                 </mat-form-field>
 
                 <mat-form-field>
                     <input
                         matInput
-                        [placeholder]="'auth.input.img' | translate"
+                        [placeholder]="'input.image' | translate"
                         name="photoURL"
                         formControlName="photoURL"
                         #imageURL
@@ -99,7 +99,7 @@
                     mat-raised-button
                     [disabled]="!form.valid && (form.dirty || form.untouched)"
                 >
-                    {{ "auth.register.button" | translate }}
+                    {{ "input.register" | translate }}
                 </button>
             </mat-card-actions>
         </form>

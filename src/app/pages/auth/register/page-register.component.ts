@@ -53,7 +53,7 @@ export class PageRegisterComponent {
 					validators: [Validators.required, Validators.minLength(6)],
 					updateOn: "blur",
 				}),
-				password_confirm: new FormControl("123456", {
+				confirm_password: new FormControl("123456", {
 					validators: [Validators.required],
 					updateOn: "blur",
 				}),

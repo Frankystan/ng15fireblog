@@ -3,7 +3,7 @@
         <form autocomplete="off" novalidate [formGroup]="form" (submit)="save()">
             <mat-card-header>
                 <mat-card-title>
-                    {{ "auth.login.title" | translate }}</mat-card-title
+                    {{ "page.login.section" | translate }}</mat-card-title
                 >
                 <!-- <mat-card-subtitle>subtitle</mat-card-subtitle> -->
             </mat-card-header>
@@ -13,7 +13,7 @@
                     <input
                         autofocus
                         matInput
-                        [placeholder]="'auth.input.email' | translate"
+                        [placeholder]="'input.email' | translate"
                         name="email"
                         formControlName="email"
                     />
@@ -25,7 +25,7 @@
                 <mat-form-field>
                     <input
                         matInput
-                        [placeholder]="'auth.input.password' | translate"
+                        [placeholder]="'input.password' | translate"
                         name="password"
                         formControlName="password"
                         [type]="hide ? 'password' : 'text'"
@@ -60,7 +60,7 @@
                     mat-raised-button
                     [disabled]="!form.valid && (form.dirty || form.untouched)"
                 >
-                    {{ "auth.login.button" | translate }}
+                    {{ "input.login" | translate }}
                 </button>
             </mat-card-actions>
         </form>
@@ -73,7 +73,7 @@
                 routerLink="/auth/register"
                 mat-button
             >
-                {{ "auth.login.register" | translate }}
+                {{ "input.register_link" | translate }}
             </button>
             <button
                 class="addtional-links"
@@ -82,13 +82,13 @@
                 routerLink="/auth/forgot-password"
                 mat-button
             >
-                {{ "auth.login.forgotten_pwd" | translate }}
+                {{ "input.forgotten_pwd_link" | translate }}
             </button>
         </div>
 
         <div fxLayout="row" fxLayoutAlign="center center" class="mat-or-divider">
             <mat-divider fxFlex="45"></mat-divider>
-            <span fxFlex="10" style="text-align: center; font-weight: 500">or</span>
+            <span fxFlex="10" style="text-align: center; font-weight: 500"> {{ "page.login.section_or_divider" | translate }} </span>
             <mat-divider fxFlex="45"></mat-divider>
         </div>
 

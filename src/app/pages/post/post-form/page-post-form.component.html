@@ -11,7 +11,7 @@
 					autofoqus
 					#imageURL
 					matInput
-					[placeholder]="'post.input.featured_image' | translate"
+					[placeholder]="'input.featured_image' | translate"
 					name="featured_image"
 					formControlName="featured_image"
 				/>
@@ -42,7 +42,7 @@
 				<mat-form-field>
 					<input
 						matInput
-						[placeholder]="'post.input.title' | translate"
+						[placeholder]="'input.title' | translate"
 						name="title"
 						formControlName="title"
 					/>
@@ -78,7 +78,7 @@
 						</mat-chip-row>
 
 						<input
-							[placeholder]="'post.input.tag.placeholder' | translate"
+							[placeholder]="'input.tags' | translate"
 							[matChipInputFor]="chipGrid"
 							[matChipInputAddOnBlur]="addOnBlur"
 							(matChipInputTokenEnd)="add($event)"
@@ -94,7 +94,7 @@
 					mat-raised-button
 					[disabled]="!form.valid && (form.dirty || form.untouched)"
 				>
-					{{ "post.input.save" | translate }}
+					{{ "input.save" | translate }}
 				</button>
 			</mat-card-actions>
 		</form>

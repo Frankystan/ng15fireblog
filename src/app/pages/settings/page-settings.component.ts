@@ -11,12 +11,43 @@ import { SettingsService } from '@app/services/settings.service';
 import { Subject, Observable, pipe } from 'rxjs';
 import { filter, map, takeUntil, tap } from 'rxjs/operators';
 
+export interface Section {
+    name: string;
+    updated: Date;
+  }
+
 @Component({
   selector: 'app-page-settings',
   templateUrl: './page-settings.component.html',
   styleUrls: ['./page-settings.component.scss']
 })
 export class PageSettingsComponent implements OnInit , OnDestroy {
+
+
+    folders: Section[] = [
+        {
+          name: 'Photos',
+          updated: new Date('1/1/16'),
+        },
+        {
+          name: 'Recipes',
+          updated: new Date('1/17/16'),
+        },
+        {
+          name: 'Work',
+          updated: new Date('1/28/16'),
+        },
+      ];
+      notes: Section[] = [
+        {
+          name: 'Vacation Itinerary',
+          updated: new Date('2/20/16'),
+        },
+        {
+          name: 'Kitchen Remodel',
+          updated: new Date('1/18/16'),
+        },
+      ];
 
     private _destroy = new Subject<void>();
     ischecked!: boolean;
