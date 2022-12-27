@@ -11,17 +11,19 @@ import { Observable, tap } from "rxjs";
 })
 export class PagePostListComponent {
     // DUMMY DATA
-    list:Array<any> = Array.from({ length: 100 }).map((value, i) => {
-        return {
-            id: `${i + 1}`,
-            title: `${i + 1} - title`,
-            name: faker.name.firstName(),
-			email: faker.internet.email(),
-			address: faker.address.streetAddress(),
-			bio: faker.lorem.paragraph(3),
-			image: faker.image.avatar(),
-        }
-    });
+    // list:Array<any> = Array.from({ length: 100 }).map((value, i) => {
+    //     return {
+    //         id: `${i + 1}`,
+    //         title: `${i + 1} - ${faker.lorem.paragraph(1)}`,
+	// 		author: {
+    //             displayName: faker.name.fullName(),
+    //             uid: faker.unique
+    //         },
+    //         created_at: 15000005644,
+	// 		content: faker.lorem.paragraph(3),
+	// 		image: faker.image.avatar(),
+    //     }
+    // });
 
     data$: Observable<IPost[]> = this.postService.list();
 

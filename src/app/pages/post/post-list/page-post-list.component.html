@@ -1,6 +1,21 @@
-<ul>
-	<li *ngFor="let post of data$ | async; let i = index">
-		<app-post-list-element [post]="post"></app-post-list-element>
-	</li>
-</ul>
+<mat-list>
+	<a
+		[routerLink]="['/posts', post.id]"
+		mat-list-item
+		class="mat-list-item"
+		*ngFor="let post of data$ | async; let i = index"
+	>
+		<img
+			matListItemAvatar
+			src="https://www.zelda.com/links-awakening/assets/img/characters/char-link.png"
+			alt="..."
+		/>
+		<h3 matListItemTitle>{{ post.title }}</h3>
+		<p matListItemLine class="second-line">
+			<span>{{ post.created_at! * 1000 | amDateFormat : "DD-MM-YYYY HH:mm" }} | </span>
+			<span>ANIBAL COLON BAEZ</span>
+		</p>
+	</a>
+</mat-list>
+
 <fab-create-post></fab-create-post>

@@ -7,24 +7,25 @@
 		[opened]="(isHandset$ | async) === false"
 	>
 		<mat-toolbar>Menu</mat-toolbar>
-		<app-drawer-nav-list [drawer]="drawer" [isHandset]="(isHandset$ | async)!"></app-drawer-nav-list>
+		<app-drawer-nav-list
+			[drawer]="drawer"
+			[isHandset]="(isHandset$ | async)!"
+		></app-drawer-nav-list>
 	</mat-drawer>
 	<mat-drawer-content>
 		<mat-toolbar color="primary" class="mat-elevation-z11">
-            <div class="navigation">
-                <app-btn-drawer [drawer]="drawer"></app-btn-drawer>
-
-			<span>ng15fireblog</span>
-            <span class="fx-flex"></span>
-            <app-btn-language-selector></app-btn-language-selector>
-            </div>
-            <div class="progress-bar">
-                <mat-progress-bar
-
-                color="accent"
-                mode="indeterminate">
-            </mat-progress-bar>
-            </div>
+			<div class="navigation">
+				<app-btn-drawer [drawer]="drawer"></app-btn-drawer>
+				<span>ng15fireblog</span>
+				<span class="fx-flex"></span>
+				<app-btn-language-selector></app-btn-language-selector>
+			</div>
+			<div class="progress-bar">
+				<mat-progress-bar
+					color="accent"
+					mode="indeterminate"
+				></mat-progress-bar>
+			</div>
 		</mat-toolbar>
 		<div class="content">
 			<router-outlet></router-outlet>
