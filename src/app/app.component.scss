@@ -4,17 +4,9 @@ mat-drawer-container {
 	min-width: 100%;
 	width: 100vw;
 
-	.navigation {
-		display: flex;
-		align-items: center;
-		height: 100%;
-		padding: 0 1rem 0 0;
-	}
-
-	.progress-bar {
-		flex: 0 1 auto;
-		flex-direction: row;
-		display: flex;
+	mat-progress-bar {
+		position: absolute;
+		left: 0;
 	}
 
 	mat-drawer {
