@@ -11,12 +11,5 @@ mat-drawer-container {
 
 	mat-drawer {
 		width: 16rem;
-
-		mat-nav-list {
-			.mat-mdc-list-item .mdc-list-item__primary-text {
-				color: red;
-				display: flex;
-			}
-		}
 	}
 }

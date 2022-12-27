@@ -15,7 +15,9 @@
 						<mat-list-item>
 							<mat-icon matListItemIcon>palette</mat-icon>
 							<div matListItemTitle>
-								{{ "page.settings.appearance.title" | translate }}
+								{{
+									"page.settings.appearance.title" | translate
+								}}
 							</div>
 							<div matListItemLine>
 								{{
@@ -35,7 +37,9 @@
 						<mat-icon matListIcon>dark_mode</mat-icon>
 					</div>
 					<mat-divider></mat-divider>
-					<div mat-subheader>{{ "page.settings.others.section" | translate }}</div>
+					<div mat-subheader>
+						{{ "page.settings.others.section" | translate }}
+					</div>
 
 					<div style="display: flex; flex-direction: row">
 						<mat-list-item>
@@ -51,10 +55,7 @@
 						</mat-list-item>
 						<span class="fx-flex"></span>
 						<mat-form-field fxFlex="23">
-							<mat-select
-								[placeholder]="
-									'settings.language.input' | translate
-								"
+							<mat-select [placeholder]="'settings.language.input' | translate"
 								[value]="language"
 								name="language"
 								formControlName="language"
@@ -63,11 +64,7 @@
 									*ngFor="let language of languages"
 									[value]="language"
 								>
-									{{
-										language.split("-")[1] == "ES"
-											? "Español"
-											: "English"
-									}}
+									{{ language.split("-")[1] == "ES" ? "Español" : "English" }}
 								</mat-option>
 							</mat-select>
 						</mat-form-field>
@@ -75,7 +72,9 @@
 				</mat-list>
 			</mat-card-content>
 			<mat-card-actions align="end">
-				<button color="primary" mat-raised-button>{{ "input.save" | translate }}</button>
+				<button color="primary" mat-raised-button>
+					{{ "input.save" | translate }}
+				</button>
 			</mat-card-actions>
 		</form>
 	</mat-card>

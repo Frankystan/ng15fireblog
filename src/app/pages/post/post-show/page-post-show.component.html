@@ -10,26 +10,13 @@
 			<mat-card-title> {{ post.title }} </mat-card-title>
 			<mat-card-subtitle>
 				<time>
-					{{
-						post.created_at! * 1000
-							| amDateFormat : "DD-MM-YYYY HH:mm"
-					}}
-					(
-					{{
-						post.created_at! * 1000 | amLocale : locale | amTimeAgo
-					}}
-					)
+					{{ post.created_at! * 1000 | amDateFormat : "DD-MM-YYYY HH:mm" }}
+					( {{ post.created_at! * 1000 | amLocale : locale | amTimeAgo }} )
 				</time>
 			</mat-card-subtitle>
 			<span class="fx-flex"></span>
 
-			<ng-container
-				*ngIf="
-					isBookMarked$ | async;
-					then bookMarked;
-					else notBookMarked
-				"
-			></ng-container>
+			<ng-container *ngIf=" isBookMarked$ | async; then bookMarked; else notBookMarked"></ng-container>
 
 			<ng-template #bookMarked>
 				<span>
